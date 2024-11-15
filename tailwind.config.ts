@@ -8,27 +8,30 @@ export default {
             fontFamily: {
                 sans: ["Inter", ...fontFamily.sans],
             },
-            fontSize: {
-                title: [
-                    "clamp(24px, 12vw, 64px)",
-                    {
-                        fontWeight: "900",
-                        lineHeight: "1.2",
-                        letterSpacing: "-0.015em",
-                    },
-                ],
-                subtitle: [
-                    "clamp(16px, 9vw, 32px)",
-                    {
-                        fontWeight: "800",
-                        lineHeight: "1.1",
-                    },
-                ],
+            colors: {
+                background: "hsl(var(--background))",
+                foreground: "hsl(var(--foreground))",
+                primary: "hsl(var(--primary))",
+                secondary: "hsl(var(--secondary))",
             },
             animation: {
-                "fade-in-down": "fade-in-down 0.5s both",
+                spotlight: "spotlight 0.5s ease 0.5s forwards",
+                "fade-in-down": "fade-in-down 0.75s ease 0.5s both",
+                flip: "flip 6s ease 0.5s infinite",
+                border: "border 3s linear infinite",
             },
             keyframes: {
+                spotlight: {
+                    "0%": {
+                        opacity: "0",
+                        transform:
+                            "translate(-50%, -25%) scale(0.5) rotate(55deg)",
+                    },
+                    "100%": {
+                        opacity: "1",
+                        transform: "translate(-50%, 0%) scale(1) rotate(55deg)",
+                    },
+                },
                 "fade-in-down": {
                     "0%": {
                         opacity: "0",
@@ -38,6 +41,33 @@ export default {
                         opacity: "1",
                         transform: "translateY(0px)",
                     },
+                },
+                flip: {
+                    "0%": {
+                        transform: "rotateX(0)",
+                    },
+                    "20%": {
+                        transform: "rotateX(0)",
+                    },
+                    "33.33%": {
+                        transform: "rotateX(120deg)",
+                    },
+                    "53.33%": {
+                        transform: "rotateX(120deg)",
+                    },
+                    "66.66%": {
+                        transform: "rotateX(240deg)",
+                    },
+                    "86.66%": {
+                        transform: "rotateX(240deg)",
+                    },
+                    "100%": {
+                        transform: "rotateX(360deg)",
+                    },
+                },
+                border: {
+                    from: { "--border-angle": "0deg" },
+                    to: { "--border-angle": "360deg" },
                 },
             },
         },

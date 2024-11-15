@@ -2,41 +2,99 @@
 import { Image } from "astro:assets";
 
 import heroBgImage from "@/assets/imgs/hero-bg.jpg";
+import config from "@/config";
 ---
 
-<main class="relative h-dvh">
+<main class="relative h-dvh overflow-x-hidden">
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 3787 2842"
+        class="pointer-events-none absolute -top-1/3 left-1/2 z-10 h-dvh -translate-x-1/2 rotate-[55deg] animate-spotlight select-none opacity-0"
+    >
+        <g filter="url(#filter)">
+            <ellipse
+                cx="1924.71"
+                cy="273.50"
+                rx="1924.71"
+                ry="273.50"
+                transform="matrix(-0.82 -0.57 -0.57 0.82 3631.88 2291.09)"
+                fill="#ffffff"
+                fill-opacity="0.20"
+            >
+            </ellipse>
+        </g>
+        <defs>
+            <filter
+                id="filter"
+                x="0.86"
+                y="0.84"
+                width="3785.16"
+                height="2840.26"
+                filterUnits="userSpaceOnUse"
+            >
+                <feFlood flood-opacity="0"></feFlood>
+                <feBlend in="SourceGraphic"></feBlend>
+                <feGaussianBlur stdDeviation="180"></feGaussianBlur>
+            </filter>
+        </defs>
+    </svg>
+
     <Image
         alt="Auto deportivo color plata"
         src={heroBgImage}
-        class="pointer-events-none absolute -z-10 size-full select-none object-cover brightness-50"
+        class="pointer-events-none absolute -z-20 h-full select-none object-cover brightness-[0.33]"
     />
 
-    <div
-        class="flex size-full animate-fade-in-down flex-col justify-center gap-y-6 p-6 text-white md:px-8 lg:px-16 xl:px-24 2xl:px-32"
+    <section
+        class="flex h-full animate-fade-in-down flex-col items-center justify-center gap-y-8 p-4 text-background"
     >
-        <div class="flex flex-col gap-y-3">
-            <h1 class="text-title uppercase">Tapicería Fabián</h1>
-        </div>
-        <h2 class="max-w-screen-sm text-pretty text-subtitle uppercase">
-            Creando Interiores Premium Desde 1990
+        <h1
+            class="text-center text-5xl font-black tracking-tight md:text-6xl xl:text-7xl"
+        >
+            Tapicería Fabián
+        </h1>
+        <h2
+            class="text-center text-3xl font-black md:text-4xl md:leading-tight xl:text-5xl"
+        >
+            Creando interiores <div
+                class="relative grid h-9 w-full animate-flip place-items-center md:h-[45px] xl:h-12 [&>span]:absolute [&>span]:shadow-primary [&>span]:[backface-visibility:hidden] [&>span]:[text-shadow:2px_2px_4px_var(--tw-shadow-color)]"
+                style={{ transformStyle: "preserve-3d" }}
+            >
+                <span style={{ transform: "rotateX(0) translateZ(20px)" }}>
+                    únicos
+                </span>
+                <span
+                    style={{ transform: "rotateX(-120deg) translateZ(20px)" }}
+                >
+                    modernos
+                </span>
+                <span
+                    style={{ transform: "rotateX(-240deg) translateZ(20px)" }}
+                >
+                    innovadores
+                </span>
+            </div> desde 1990
         </h2>
-        <p class="max-w-screen-sm text-balance text-xl">
-            Especialista en tapicería automotriz con mano de obra experta para
-            el interior de tu vehículo&#46;
-        </p>
-        <div class="flex gap-x-3">
+
+        <section class="flex flex-wrap justify-center gap-6 py-4">
             <a
-                href="#"
-                class="grid animate-pulse place-items-center rounded-lg bg-white px-4 py-1.5 font-medium text-black transition-colors hover:bg-white/80"
+                href={config.contactUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="relative grid animate-border place-items-center whitespace-nowrap rounded-full bg-foreground px-3 py-2 text-sm font-medium text-secondary transition-colors before:absolute before:left-1/2 before:top-1/2 before:-z-10 before:box-content before:size-full before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:p-px before:content-[''] before:[background-image:var(--border)] hover:text-secondary/80"
+                style={{
+                    "--border":
+                        "conic-gradient(from var(--border-angle), transparent 16.67%, #ffffff25 33.33%, hsl(var(--primary)))",
+                }}
             >
-                Solicitar cotización
+                Solicitar presupuesto
             </a>
             <a
                 href="#"
-                class="grid place-items-center rounded-lg border-2 border-white px-4 py-1.5 font-medium transition-colors hover:bg-white hover:text-black"
+                class="grid place-items-center whitespace-nowrap rounded-md bg-background px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-background/80"
             >
-                Ver trabajos
+                Explorar galería
             </a>
-        </div>
-    </div>
+        </section>
+    </section>
 </main>
