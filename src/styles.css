@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: "Geist";
-    src: local("Geist") url("./fonts/Geist.ttf") format("truetype");
+    src: local("Geist") url("./assets/fonts/Geist.ttf") format("truetype");
     font-weight: 100 900;
     font-style: normal;
 }
