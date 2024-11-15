@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: "Geist";
-    src: local("Geist") url("./assets/fonts/Geist.ttf") format("truetype");
+    font-family: "Inter";
+    src: local("Inter") url("./assets/fonts/Inter.ttf") format("truetype");
     font-weight: 100 900;
     font-style: normal;
 }
