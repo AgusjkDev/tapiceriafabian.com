@@ -1,4 +1,5 @@
 .astro
+.vercel
 .vscode
 bun.lockb
 dist
