@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 
 import heroBgImage from "@/assets/imgs/hero-bg.jpg";
 import config from "@/config";
+import Button from "@/ui/button.astro";
 ---
 
 <main class="relative h-dvh overflow-x-hidden">
@@ -77,24 +78,20 @@ import config from "@/config";
         </h2>
 
         <section class="flex flex-wrap justify-center gap-6 py-4">
-            <a
-                href={config.contactUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="relative grid animate-border place-items-center whitespace-nowrap rounded-full bg-background px-3 py-2 text-sm font-medium transition-colors before:absolute before:left-1/2 before:top-1/2 before:-z-10 before:box-content before:size-full before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:p-px before:content-[''] before:[background-image:var(--border)] hover:text-foreground/80"
-                style={{
-                    "--border":
-                        "conic-gradient(from var(--border-angle), transparent 16.67%, #ffffff25 33.33%, hsl(var(--primary)))",
+            <Button
+                as="a"
+                variant="animate-border"
+                props={{
+                    href: config.contactUrl,
+                    target: "_blank",
+                    rel: "noopener noreferrer",
                 }}
             >
                 Solicitar presupuesto
-            </a>
-            <a
-                href="#"
-                class="grid place-items-center whitespace-nowrap rounded-md bg-foreground px-3 py-2 text-sm font-medium text-background transition-colors hover:bg-foreground/80"
-            >
+            </Button>
+            <Button as="a" variant="contrast" props={{ href: "#" }}>
                 Explorar galería
-            </a>
+            </Button>
         </section>
     </section>
 </main>

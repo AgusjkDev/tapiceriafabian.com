@@ -5,7 +5,7 @@ export default {
     tabWidth: 4,
     importOrder: ["<THIRD_PARTY_MODULES>", "", "^@/(.*)$", "", "^[./]"],
     importOrderParserPlugins: ["typescript"],
-    tailwindFunctions: ["twMerge"],
+    tailwindFunctions: ["cva", "twMerge"],
     plugins: [
         "@ianvs/prettier-plugin-sort-imports",
         "prettier-plugin-astro",
