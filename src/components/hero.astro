@@ -46,7 +46,7 @@ import config from "@/config";
     />
 
     <section
-        class="flex h-full animate-fade-in-down flex-col items-center justify-center gap-y-8 p-4 text-background"
+        class="flex h-full animate-fade-in-down flex-col items-center justify-center gap-y-8 p-4"
     >
         <h1
             class="text-center text-5xl font-black tracking-tight md:text-6xl xl:text-7xl"
@@ -81,7 +81,7 @@ import config from "@/config";
                 href={config.contactUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="relative grid animate-border place-items-center whitespace-nowrap rounded-full bg-foreground px-3 py-2 text-sm font-medium text-secondary transition-colors before:absolute before:left-1/2 before:top-1/2 before:-z-10 before:box-content before:size-full before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:p-px before:content-[''] before:[background-image:var(--border)] hover:text-secondary/80"
+                class="relative grid animate-border place-items-center whitespace-nowrap rounded-full bg-background px-3 py-2 text-sm font-medium transition-colors before:absolute before:left-1/2 before:top-1/2 before:-z-10 before:box-content before:size-full before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:p-px before:content-[''] before:[background-image:var(--border)] hover:text-foreground/80"
                 style={{
                     "--border":
                         "conic-gradient(from var(--border-angle), transparent 16.67%, #ffffff25 33.33%, hsl(var(--primary)))",
@@ -91,7 +91,7 @@ import config from "@/config";
             </a>
             <a
                 href="#"
-                class="grid place-items-center whitespace-nowrap rounded-md bg-background px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-background/80"
+                class="grid place-items-center whitespace-nowrap rounded-md bg-foreground px-3 py-2 text-sm font-medium text-background transition-colors hover:bg-foreground/80"
             >
                 Explorar galería
             </a>

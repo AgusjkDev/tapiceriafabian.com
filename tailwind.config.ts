@@ -12,7 +12,10 @@ export default {
                 background: "hsl(var(--background))",
                 foreground: "hsl(var(--foreground))",
                 primary: "hsl(var(--primary))",
-                secondary: "hsl(var(--secondary))",
+                secondary: {
+                    DEFAULT: "hsl(var(--secondary))",
+                    foreground: "hsl(var(--secondary-foreground))",
+                },
             },
             animation: {
                 spotlight: "spotlight 0.5s ease 0.5s forwards",
