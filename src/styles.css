@@ -24,3 +24,26 @@
         --secondary-foreground: 217.9 10.6% 64.9%;
     }
 }
+
+@layer components {
+    @supports (animation-timeline: view()) {
+        [data-scroll-timeline] {
+            scale: 0.75;
+            opacity: 0;
+            animation: scroll-fade-in linear forwards;
+            animation-timeline: view();
+            animation-range: entry;
+        }
+        @keyframes scroll-fade-in {
+            to {
+                scale: 1;
+                opacity: 1;
+            }
+        }
+    }
+    @supports not (animation-timeline: view()) {
+        [data-scroll-timeline] {
+            @apply animate-fade-in-down;
+        }
+    }
+}
