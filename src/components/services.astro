@@ -124,11 +124,11 @@ const SERVICES = [
                 const { left, top } = card.getBoundingClientRect();
                 card.style.setProperty(
                     "--mouse-x",
-                    `${x - (left - containerRect.left)}px`,
+                    `${(x - (left - containerRect.left)).toFixed(2)}px`,
                 );
                 card.style.setProperty(
                     "--mouse-y",
-                    `${y - (top - containerRect.top)}px`,
+                    `${(y - (top - containerRect.top)).toFixed(2)}px`,
                 );
             });
         }
