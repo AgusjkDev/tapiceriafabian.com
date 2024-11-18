@@ -4,8 +4,8 @@ export default {
     endOfLine: "crlf",
     tabWidth: 4,
     importOrder: ["<THIRD_PARTY_MODULES>", "", "^@/(.*)$", "", "^[./]"],
-    importOrderParserPlugins: ["typescript"],
-    tailwindFunctions: ["cva", "twMerge"],
+    importOrderParserPlugins: ["typescript", "jsx"],
+    tailwindFunctions: ["clsx", "cn", "cva", "twMerge"],
     plugins: [
         "@ianvs/prettier-plugin-sort-imports",
         "prettier-plugin-astro",

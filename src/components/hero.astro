@@ -2,8 +2,8 @@
 import { Image } from "astro:assets";
 
 import heroBgImage from "@/assets/imgs/hero-bg.jpg";
+import { buttonVariants } from "@/components/ui/button";
 import config from "@/config";
-import Button from "@/ui/button.astro";
 ---
 
 <main class="relative h-dvh overflow-x-hidden">
@@ -78,20 +78,21 @@ import Button from "@/ui/button.astro";
         </h2>
 
         <section class="flex flex-wrap justify-center gap-6 py-4">
-            <Button
-                as="a"
-                variant="animate-border"
-                props={{
-                    href: config.contactUrl,
-                    target: "_blank",
-                    rel: "noopener noreferrer",
-                }}
+            <a
+                href={config.contactUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class={buttonVariants({
+                    variant: "animate-border",
+                    roundness: "full",
+                })}
             >
                 Solicitar presupuesto
-            </Button>
-            <Button as="a" variant="contrast" props={{ href: "#" }}>
+            </a>
+
+            <a href="#" class={buttonVariants({ variant: "foreground" })}>
                 Explorar galería
-            </Button>
+            </a>
         </section>
     </section>
 </main>
