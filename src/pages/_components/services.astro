@@ -1,6 +1,8 @@
 ---
 import { Armchair, Palette, Wrench, type LucideIcon } from "lucide-react";
 
+import SectionLayout from "../_layouts/section-layout.astro";
+
 const SERVICES = [
     {
         title: "Tapizados personalizados",
@@ -27,23 +29,10 @@ const SERVICES = [
 }[];
 ---
 
-<section
-    class="flex flex-col items-center gap-y-8 px-4 py-32 lg:px-8 xl:gap-y-12 2xl:gap-y-16"
-    data-scroll-timeline
+<SectionLayout
+    title="Nuestros servicios"
+    subtitle="Soluciones integrales de tapicería adaptadas a tus necesidades"
 >
-    <header class="flex flex-col gap-y-4">
-        <h3
-            class="text-center text-2xl font-black md:text-3xl md:leading-tight xl:text-4xl"
-        >
-            Nuestros servicios
-        </h3>
-        <h4
-            class="max-w-prose text-center text-lg font-medium text-muted-foreground"
-        >
-            Soluciones integrales de tapicería adaptadas a tus necesidades
-        </h4>
-    </header>
-
     <div
         class="group grid max-w-md gap-8 lg:max-w-screen-xl lg:grid-cols-3 lg:gap-8 xl:gap-12 2xl:gap-16"
         data-services-container
@@ -88,7 +77,7 @@ const SERVICES = [
             ))
         }
     </div>
-</section>
+</SectionLayout>
 
 <script>
     const CONTAINER_SELECTOR = "[data-services-container]";

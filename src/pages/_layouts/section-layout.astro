@@ -1,0 +1,28 @@
+---
+interface Props {
+    title: string;
+    subtitle: string;
+}
+
+const { title, subtitle } = Astro.props;
+---
+
+<section
+    class="flex flex-col items-center gap-y-8 px-4 py-32 lg:px-8 xl:gap-y-12 2xl:gap-y-16"
+    data-scroll-timeline
+>
+    <header class="flex flex-col gap-y-4">
+        <h3
+            class="text-center text-2xl font-black md:text-3xl md:leading-tight xl:text-4xl"
+        >
+            {title}
+        </h3>
+        <h4
+            class="max-w-prose text-center text-lg font-medium text-muted-foreground"
+        >
+            {subtitle}
+        </h4>
+    </header>
+
+    <slot />
+</section>
