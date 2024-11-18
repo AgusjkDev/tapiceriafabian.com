@@ -6,6 +6,7 @@ export default {
     importOrder: ["<THIRD_PARTY_MODULES>", "", "^@/(.*)$", "", "^[./]"],
     importOrderParserPlugins: ["typescript", "jsx"],
     tailwindFunctions: ["clsx", "cn", "cva", "twMerge"],
+    tailwindAttributes: ["className"], // Fix for setting classes to react components inside astro components.
     plugins: [
         "@ianvs/prettier-plugin-sort-imports",
         "prettier-plugin-astro",
