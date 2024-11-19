@@ -1,0 +1,46 @@
+---
+import showcaseClasicosImage from "@/assets/imgs/showcase-clasicos.jpg";
+import showcaseLujoImage from "@/assets/imgs/showcase-lujo.jpg";
+import showcaseModernosImage from "@/assets/imgs/showcase-modernos.jpg";
+import showcaseRestauracionImage from "@/assets/imgs/showcase-restauracion.jpg";
+import showcaseVintageImage from "@/assets/imgs/showcase-vintage.jpg";
+
+import SectionLayout from "../../_layouts/section-layout.astro";
+import ShowcaseCarousel from "./showcase-carousel";
+import type { ShowcaseItem } from "./showcase-carousel";
+
+const SHOWCASE_ITEMS = [
+    {
+        title: "Detalles que perduran",
+        category: "Clásicos",
+        image: showcaseClasicosImage,
+    },
+    {
+        title: "Innovación a la vista",
+        category: "Modernos",
+        image: showcaseModernosImage,
+    },
+    {
+        title: "Belleza en cada costura",
+        category: "Restauración",
+        image: showcaseRestauracionImage,
+    },
+    {
+        title: "Refinamiento a medida",
+        category: "Lujo",
+        image: showcaseLujoImage,
+    },
+    {
+        title: "Calidad que trasciende",
+        category: "Vintage",
+        image: showcaseVintageImage,
+    },
+] satisfies ShowcaseItem[];
+---
+
+<SectionLayout
+    title="Últimas creaciones"
+    subtitle="Proyectos exclusivos hechos con dedicación"
+>
+    <ShowcaseCarousel client:visible items={SHOWCASE_ITEMS} />
+</SectionLayout>
