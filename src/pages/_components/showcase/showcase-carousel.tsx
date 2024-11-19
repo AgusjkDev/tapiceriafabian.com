@@ -1,4 +1,4 @@
-import type { ImageMetadata } from "astro";
+import type { GetImageResult } from "astro";
 
 import {
     Carousel,
@@ -11,7 +11,7 @@ import {
 export type ShowcaseItem = {
     title: string;
     category: string;
-    image: ImageMetadata;
+    image: GetImageResult;
 };
 
 interface ShowcaseCarouselProps {

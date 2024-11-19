@@ -1,39 +1,50 @@
 ---
-import showcaseClasicosImage from "@/assets/imgs/showcase-clasicos.jpg";
-import showcaseLujoImage from "@/assets/imgs/showcase-lujo.jpg";
-import showcaseModernosImage from "@/assets/imgs/showcase-modernos.jpg";
-import showcaseRestauracionImage from "@/assets/imgs/showcase-restauracion.jpg";
-import showcaseVintageImage from "@/assets/imgs/showcase-vintage.jpg";
+import { getImage } from "astro:assets";
 
 import SectionLayout from "../../_layouts/section-layout.astro";
-import ShowcaseCarousel from "./showcase-carousel";
-import type { ShowcaseItem } from "./showcase-carousel";
+import ShowcaseCarousel, { type ShowcaseItem } from "./showcase-carousel";
 
 const SHOWCASE_ITEMS = [
     {
         title: "Detalles que perduran",
         category: "Clásicos",
-        image: showcaseClasicosImage,
+        image: await getImage({
+            src: (await import("@/assets/imgs/showcase-clasicos.jpg")).default,
+            format: "avif",
+        }),
     },
     {
         title: "Innovación a la vista",
         category: "Modernos",
-        image: showcaseModernosImage,
+        image: await getImage({
+            src: (await import("@/assets/imgs/showcase-modernos.jpg")).default,
+            format: "avif",
+        }),
     },
     {
         title: "Belleza en cada costura",
         category: "Restauración",
-        image: showcaseRestauracionImage,
+        image: await getImage({
+            src: (await import("@/assets/imgs/showcase-restauracion.jpg"))
+                .default,
+            format: "avif",
+        }),
     },
     {
         title: "Refinamiento a medida",
         category: "Lujo",
-        image: showcaseLujoImage,
+        image: await getImage({
+            src: (await import("@/assets/imgs/showcase-lujo.jpg")).default,
+            format: "avif",
+        }),
     },
     {
         title: "Calidad que trasciende",
         category: "Vintage",
-        image: showcaseVintageImage,
+        image: await getImage({
+            src: (await import("@/assets/imgs/showcase-vintage.jpg")).default,
+            format: "avif",
+        }),
     },
 ] satisfies ShowcaseItem[];
 ---
