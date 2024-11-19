@@ -1,0 +1,63 @@
+---
+import { Star } from "lucide-react";
+
+import { cn } from "@/lib/utils";
+
+import SectionLayout from "../_layouts/section-layout.astro";
+
+const REVIEWS = [
+    {
+        name: "Sofía F.",
+        review: "Le llevé a Fabián un sillón que estaba destrozado por mi mascota, y no solo lo restauró, sino que lo dejó mejor que nuevo. La calidad es excelente, valió cada peso.",
+        rating: 5,
+    },
+    {
+        name: "Jorge S.",
+        review: "Encargué la renovación de las sillas del comedor de mi abuela. Fabián hizo un gran trabajo, valió mucho la pena porque respetó el diseño original y quedaron genial.",
+        rating: 4,
+    },
+    {
+        name: "Luis P.",
+        review: "Después de varios años usando mi auto para el trabajo, los tapizados estaban repletos de suciedad. Se hizo un trabajo impecable, una limpieza que los dejó como de fábrica.",
+        rating: 5,
+    },
+] satisfies {
+    name: string;
+    review: string;
+    rating: 0 | 1 | 2 | 3 | 4 | 5;
+}[];
+---
+
+<SectionLayout
+    title="Tu confianza"
+    subtitle="Porque cada detalle importa y tu satisfacción nos define"
+>
+    <div
+        class="grid gap-8 lg:max-w-screen-xl lg:grid-cols-3 xl:gap-12 2xl:gap-16"
+    >
+        {
+            REVIEWS.map(({ name, review, rating }) => (
+                <article class="flex flex-col gap-y-4">
+                    <div class="flex gap-x-0.5" data-reviews-stars>
+                        {Array.from({ length: 5 }).map((_, i) => (
+                            <Star
+                                className={cn(
+                                    "size-4",
+                                    i < rating
+                                        ? "fill-primary text-primary"
+                                        : "text-muted-foreground",
+                                )}
+                            />
+                        ))}
+                    </div>
+
+                    <p class="max-w-prose text-pretty italic text-muted-foreground">
+                        &quot;{review}&quot;
+                    </p>
+
+                    <span class="font-medium">{name}</span>
+                </article>
+            ))
+        }
+    </div>
+</SectionLayout>
