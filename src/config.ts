@@ -5,28 +5,38 @@ import {
     type IconType,
 } from "@/components/common/icons";
 
+const WHATSAPP_QUICK_CHAT_URL = new URL(
+    "https://wa.me/5491123574690?text=Hola+Fabi%C3%A1n%2C+te+contacto+para+solicitar+un+presupuesto.",
+);
+
+export const contact = {
+    href: WHATSAPP_QUICK_CHAT_URL,
+} satisfies {
+    href: URL;
+};
+
 export const socials = [
     {
         text: "tapiceria.fabian",
-        url: "#",
+        url: new URL("https://facebook.com/tapiceria.fabian"),
         color: "#1877f2",
         icon: FacebookIcon,
     },
     {
         text: "tapiceria.fabian",
-        url: "#",
+        url: new URL("https://instagram.com/tapiceria.fabian"),
         color: "#e1306c",
         icon: InstagramIcon,
     },
     {
         text: "+54 011 2357-4690",
-        url: "#",
+        url: WHATSAPP_QUICK_CHAT_URL,
         color: "#25d366",
         icon: WhatsAppIcon,
     },
 ] satisfies {
     text: string;
-    url: "#";
+    url: URL;
     color: `#${string}`;
     icon: IconType;
 }[];

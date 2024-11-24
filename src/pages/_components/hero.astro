@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 
 import heroBgImage from "@/assets/imgs/hero-bg.jpg";
 import { buttonVariants } from "@/components/ui/button";
+import { contact } from "@/config";
 ---
 
 <main class="relative h-dvh overflow-x-hidden">
@@ -79,7 +80,7 @@ import { buttonVariants } from "@/components/ui/button";
 
         <section class="flex flex-wrap justify-center gap-6 py-4">
             <a
-                href="#"
+                href={contact.href}
                 target="_blank"
                 rel="noopener noreferrer"
                 class={buttonVariants({
