@@ -4,14 +4,16 @@ import { getImage } from "astro:assets";
 import { Category } from "@/config";
 
 import SectionLayout from "../../_layouts/section-layout.astro";
-import ShowcaseCarousel, { type ShowcaseItem } from "./showcase-carousel";
+import SpecialtiesCarousel, {
+    type SpecialtyItem,
+} from "./specialties-carousel";
 
-const SHOWCASE_ITEMS = [
+const ITEMS = [
     {
         title: "Detalles que perduran",
         category: Category.CLASSIC,
         image: await getImage({
-            src: (await import("@/assets/imgs/showcase-clasicos.jpg")).default,
+            src: (await import("@/assets/imgs/speciality-classic.jpg")).default,
             format: "avif",
         }),
     },
@@ -19,7 +21,7 @@ const SHOWCASE_ITEMS = [
         title: "Innovación a la vista",
         category: Category.MODERN,
         image: await getImage({
-            src: (await import("@/assets/imgs/showcase-modernos.jpg")).default,
+            src: (await import("@/assets/imgs/speciality-modern.jpg")).default,
             format: "avif",
         }),
     },
@@ -27,7 +29,7 @@ const SHOWCASE_ITEMS = [
         title: "Belleza en cada costura",
         category: Category.RESTORATION,
         image: await getImage({
-            src: (await import("@/assets/imgs/showcase-restauracion.jpg"))
+            src: (await import("@/assets/imgs/speciality-restoration.jpg"))
                 .default,
             format: "avif",
         }),
@@ -36,7 +38,7 @@ const SHOWCASE_ITEMS = [
         title: "Refinamiento a medida",
         category: Category.LUXURY,
         image: await getImage({
-            src: (await import("@/assets/imgs/showcase-lujo.jpg")).default,
+            src: (await import("@/assets/imgs/speciality-luxury.jpg")).default,
             format: "avif",
         }),
     },
@@ -44,16 +46,16 @@ const SHOWCASE_ITEMS = [
         title: "Calidad que trasciende",
         category: Category.VINTAGE,
         image: await getImage({
-            src: (await import("@/assets/imgs/showcase-vintage.jpg")).default,
+            src: (await import("@/assets/imgs/speciality-vintage.jpg")).default,
             format: "avif",
         }),
     },
-] satisfies ShowcaseItem[];
+] satisfies SpecialtyItem[];
 ---
 
 <SectionLayout
-    title="Últimas creaciones"
+    title="Especialidades"
     subtitle="Proyectos exclusivos hechos con dedicación"
 >
-    <ShowcaseCarousel client:visible items={SHOWCASE_ITEMS} />
+    <SpecialtiesCarousel client:visible items={ITEMS} />
 </SectionLayout>

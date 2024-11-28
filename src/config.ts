@@ -42,8 +42,8 @@ export const socials = [
 }[];
 
 export enum Category {
-    CLASSIC = "Clásicos",
-    MODERN = "Modernos",
+    CLASSIC = "Clásico",
+    MODERN = "Moderno",
     RESTORATION = "Restauración",
     LUXURY = "Lujo",
     VINTAGE = "Vintage",

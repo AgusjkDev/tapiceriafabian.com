@@ -8,18 +8,18 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel";
 
-export type ShowcaseItem = {
+export type SpecialtyItem = {
     title: string;
     category: string;
     image: GetImageResult;
 };
 
-interface ShowcaseCarouselProps {
-    items: ShowcaseItem[];
+interface SpecialtiesCarouselProps {
+    items: SpecialtyItem[];
 }
-export default function ShowcaseCarousel({
+export default function SpecialtiesCarousel({
     items,
-}: Readonly<ShowcaseCarouselProps>) {
+}: Readonly<SpecialtiesCarouselProps>) {
     return (
         <Carousel className="w-3/4 sm:w-full sm:max-w-md lg:w-[92.5%] lg:max-w-screen-xl">
             <CarouselContent className="-ml-8 xl:-ml-12 2xl:-ml-16">
@@ -28,10 +28,7 @@ export default function ShowcaseCarousel({
                         key={category}
                         className="pl-8 lg:basis-1/3 xl:pl-12 2xl:pl-16"
                     >
-                        <a
-                            href="#"
-                            className="relative flex aspect-[9/16] select-none flex-col gap-y-2 rounded-3xl p-8"
-                        >
+                        <article className="relative flex aspect-[9/16] select-none flex-col gap-y-2 rounded-3xl p-8">
                             <span className="text-sm font-medium md:text-base">
                                 {category}
                             </span>
@@ -45,7 +42,7 @@ export default function ShowcaseCarousel({
                                 src={image.src}
                                 className="absolute inset-0 -z-10 m-auto size-full rounded-[inherit] object-cover brightness-50"
                             />
-                        </a>
+                        </article>
                     </CarouselItem>
                 ))}
             </CarouselContent>
