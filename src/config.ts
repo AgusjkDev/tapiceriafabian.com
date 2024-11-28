@@ -40,3 +40,11 @@ export const socials = [
     color: `#${string}`;
     icon: IconType;
 }[];
+
+export enum Category {
+    CLASSIC = "Clásicos",
+    MODERN = "Modernos",
+    RESTORATION = "Restauración",
+    LUXURY = "Lujo",
+    VINTAGE = "Vintage",
+}
