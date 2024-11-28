@@ -5,15 +5,12 @@ import {
     type IconType,
 } from "@/components/common/icons";
 
-const WHATSAPP_QUICK_CHAT_URL = new URL(
+export const WHATSAPP_QUICK_CHAT_URL = new URL(
     "https://wa.me/5491123574690?text=Hola+Fabi%C3%A1n%2C+te+contacto+para+solicitar+un+presupuesto.",
 );
-
-export const contact = {
-    href: WHATSAPP_QUICK_CHAT_URL,
-} satisfies {
-    href: URL;
-};
+export const INSTAGRAM_PROFILE_URL = new URL(
+    "https://instagram.com/tapiceria.fabian",
+);
 
 export const socials = [
     {
@@ -24,7 +21,7 @@ export const socials = [
     },
     {
         text: "tapiceria.fabian",
-        url: new URL("https://instagram.com/tapiceria.fabian"),
+        url: INSTAGRAM_PROFILE_URL,
         color: "#e1306c",
         icon: InstagramIcon,
     },
