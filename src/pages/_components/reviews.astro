@@ -41,6 +41,7 @@ const REVIEWS = [
                     <div class="flex gap-x-0.5" data-reviews-stars>
                         {Array.from({ length: 5 }).map((_, i) => (
                             <Star
+                                aria-hidden
                                 className={cn(
                                     "size-4",
                                     i < rating
@@ -49,6 +50,7 @@ const REVIEWS = [
                                 )}
                             />
                         ))}
+                        <span class="sr-only">{rating} stars</span>
                     </div>
 
                     <p class="max-w-prose text-pretty italic text-muted-foreground">
